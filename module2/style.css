@@ -31,7 +31,7 @@ h3{
 	margin-right: auto;
 }
 
-div.title{
+div.section{
 	width:20%;
 	float:right;
 	display: block;
@@ -39,9 +39,25 @@ div.title{
 	margin-bottom: 10px;
 }
 
+div.section.one{
+	background-color: orange;
+}
+
+div.section.two{
+	background-color: green;
+}
+
+div.section.three{
+	background-color: purple;
+}
+
 div.content{
 	display: block;
 	float: none;
 	width:100%;
 	margin-left:0px;
+}
+
+div{
+	border: 1px solid black;
 }
