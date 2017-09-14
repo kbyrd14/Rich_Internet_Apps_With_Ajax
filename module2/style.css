@@ -34,8 +34,9 @@ h3{
 div.title{
 	width:15%;
 	float:right;
+	display: block;
 }
 
 div.content{
-	
+	display: block;
 }
