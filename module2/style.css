@@ -5,6 +5,28 @@
 		margin-left: 25px;
 		float: left;
 	}
+	
+		h2{
+		width: 15%;
+		margin-left: auto;
+		margin-right: auto;
+		visibility: visible;
+	}
+	
+	h3{
+		visibility: hidden;
+	}
+	
+	div.section{
+		width:20%;
+		float:right;
+		display: block;
+		visibility: visible;
+	}
+	
+	div.section.alt{
+		visibility: hidden;
+	}
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	div{
@@ -15,6 +37,28 @@
 	}
 	.secondRow{
 		width: 94%;
+	}
+	
+	h2{
+		width: 15%;
+		margin-left: auto;
+		margin-right: auto;
+		visibility: visible;
+	}
+	
+	h3{
+		visibility: hidden;
+	}
+	
+	div.section{
+		width:20%;
+		float:right;
+		display: block;
+		visibility: visible;
+	}
+	
+	div.section.alt{
+		visibility: hidden;
 	}
 }
 @media (max-width: 767px) {
@@ -31,6 +75,8 @@
 	
 	h3{
 		visibility: visible;
+		font-family: fantasy;
+		margin-left: 25px;
 	}
 	
 	div.section{
@@ -43,30 +89,6 @@
 	}
 }
 
-h2{
-	width: 15%;
-	margin-left: auto;
-	margin-right: auto;
-	visibility: visible;
-}
-
-h3{
-	visibility: hidden;
-	font-family: fantasy;
-	margin-left: 25px;
-}
-
-div.section{
-	width:20%;
-	float:right;
-	display: block;
-	visibility: visible;
-}
-
-div.section.alt{
-	width: 100%;
-	visibility: hidden;
-}
 
 div.section.one{
 	background-color: gold;
