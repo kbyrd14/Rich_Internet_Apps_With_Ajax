@@ -14,7 +14,7 @@
 		float: left;
 	}
 	.secondRow{
-		width: 90%;
+		width: 94%;
 	}
 }
 @media (max-width: 767px) {
@@ -38,16 +38,16 @@ div.section{
 }
 
 div.section.one{
-	background-color: orange;
+	background-color: gold;
 }
 
 div.section.two{
-	background-color: green;
+	background-color: Silver;
 	color: white;
 }
 
 div.section.three{
-	background-color: purple;
+	background-color: MediumOrchid;
 	color: white;
 }
 
@@ -55,7 +55,7 @@ div.section.three{
 	width:90%;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top: 10px;
+	margin-top: 15%;
 }
 
 div{
@@ -65,6 +65,7 @@ div{
 
 span{
 	width: 90%;
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
