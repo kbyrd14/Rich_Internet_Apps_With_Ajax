@@ -35,8 +35,12 @@ div.title{
 	width:15%;
 	float:right;
 	display: block;
+	margin-left:0px;
 }
 
 div.content{
 	display: block;
+	float: none;
+	width:100%;
+	margin-left:0px;
 }
