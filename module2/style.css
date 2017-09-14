@@ -115,22 +115,22 @@ div.section.three{
 	overflow-y: hidden;
 }
 
-:HOVER .box{
+.box div:HOVER {
 	cursor: se-resize;
 	
 }
 
-:HOVER .box.one{
+.box.one div:HOVER {
 	
 	overflow-y: scroll;
 }
 
-:HOVER .box.two{
+box.two div:HOVER {
 	
 	overflow-y: scroll;
 }
 
-:HOVER .box.three{
+box.three div:HOVER {
 	
 	overflow-y: scroll;
 }
