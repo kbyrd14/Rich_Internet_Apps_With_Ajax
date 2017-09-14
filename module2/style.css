@@ -55,7 +55,7 @@ div.section.three{
 	width:90%;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top: 15%;
+	margin-top: 50px;
 }
 
 div{
@@ -63,7 +63,7 @@ div{
 	margin-bottom: 25px;
 }
 
-span{
+.section p{
 	width: 90%;
 	display: block;
 	margin-left: auto;
