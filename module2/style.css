@@ -45,10 +45,12 @@ div.section.one{
 
 div.section.two{
 	background-color: green;
+	color: white;
 }
 
 div.section.three{
 	background-color: purple;
+	color: white;
 }
 
 div.content{
