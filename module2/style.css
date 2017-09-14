@@ -30,3 +30,8 @@ h3{
 	margin-left: auto;
 	margin-right: auto;
 }
+
+div.title{
+	width:15%;
+	float:right;
+}
