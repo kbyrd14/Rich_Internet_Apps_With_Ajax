@@ -35,9 +35,6 @@ div.section{
 	width:20%;
 	float:right;
 	display: block;
-	margin-left:auto;
-	margin-righ: auto;
-	margin-bottom: 10px;
 }
 
 div.section.one{
@@ -55,12 +52,18 @@ div.section.three{
 }
 
 .content{
-	width:100%;
+	width:90%;
 	margin-left:auto;
 	margin-right:auto;
+	margin-top: 10px;
 }
 
 div{
 	border: 1px solid black;
 	margin-bottom: 25px;
+}
+
+span{
+	margin-left: auto;
+	margin-right: auto;
 }
