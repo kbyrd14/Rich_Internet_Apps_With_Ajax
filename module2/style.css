@@ -10,11 +10,11 @@
 		width: 15%;
 		margin-left: auto;
 		margin-right: auto;
-		visibility: visible;
+		display: inherit;
 	}
 	
 	h3{
-		visibility: hidden;
+		display: none;
 	}
 	
 	div.section{
@@ -25,7 +25,7 @@
 	}
 	
 	div.section.alt{
-		visibility: hidden;
+		display: none;
 	}
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -43,11 +43,11 @@
 		width: 15%;
 		margin-left: auto;
 		margin-right: auto;
-		visibility: visible;
+		display: inherit;
 	}
 	
 	h3{
-		visibility: hidden;
+		display: none;
 	}
 	
 	div.section{
@@ -58,7 +58,7 @@
 	}
 	
 	div.section.alt{
-		visibility: hidden;
+		display: none;
 	}
 }
 @media (max-width: 767px) {
@@ -70,22 +70,22 @@
 	}
 	
 	h2{
-		visibility: hidden;
+		display: none;
 	}
 	
 	h3{
-		visibility: visible;
+		display: inherit;
 		font-family: fantasy;
 		margin-left: 25px;
 	}
 	
 	div.section{
-		visibility: hidden;
+		display: none;
 	}
 	
 	div.section.alt{
 		width: 100%;
-		visibility: visible;
+		display: block;
 	}
 }
 
@@ -117,6 +117,21 @@ div.section.three{
 
 :HOVER .box{
 	cursor: se-resize;
+	
+}
+
+:HOVER .box.one{
+	
+	overflow-y: scroll;
+}
+
+:HOVER .box.two{
+	
+	overflow-y: scroll;
+}
+
+:HOVER .box.three{
+	
 	overflow-y: scroll;
 }
 
