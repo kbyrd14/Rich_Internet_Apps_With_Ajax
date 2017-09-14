@@ -24,17 +24,48 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+	
+	h2{
+		visibility: hidden;
+	}
+	
+	h3{
+		visibility: visible;
+	}
+	
+	div.section{
+		visibility: hidden;
+	}
+	
+	div.section.alt{
+		width: 100%;
+		visibility: visible;
+	}
 }
-h3{
+
+h2{
 	width: 15%;
 	margin-left: auto;
 	margin-right: auto;
+	visibility: visible;
+}
+
+h3{
+	visibility: hidden;
+	font-family: fantasy;
+	margin-left: 25px;
 }
 
 div.section{
 	width:20%;
 	float:right;
 	display: block;
+	visibility: visible;
+}
+
+div.section.alt{
+	width: 100%;
+	visibility: hidden;
 }
 
 div.section.one{
@@ -43,7 +74,6 @@ div.section.one{
 
 div.section.two{
 	background-color: Silver;
-	color: white;
 }
 
 div.section.three{
@@ -58,14 +88,25 @@ div.section.three{
 	margin-top: 50px;
 }
 
+.box{
+	max-height: 150px;
+	overflow-y: hidden;
+}
+
+:HOVER .box{
+	cursor: se-resize;
+	overflow-y: scroll;
+}
+
 div{
 	border: 1px solid black;
 	margin-bottom: 25px;
 }
 
-.section p{
+span{
 	width: 90%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 }
