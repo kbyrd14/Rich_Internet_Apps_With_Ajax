@@ -9,21 +9,30 @@
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		  <a class="navbar-brand" href="#">Food, LLC</a>
-		  <a class="d-md-none d-sm-block" href="#">
-		  	<img src="/open-iconic/svg/menu.svg">
-	  	  </a>
-		  
-		
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		  </div>
+		  <button class="navbar-toggler d-md-none d-sm-block" type="button" data-toggle="collapse" data-target="#submenu" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      		<!-- <img src="open-iconic-master/svg/menu.svg"> --><span class="navbar-toggler-icon"></span>
+    	  </button>
 		</nav>
 		
+		<div id="submenu" class="row">
+			<div class="col"><a href="#chicken">Chicken</a></div>
+			<hr>
+			<div class="col"><a href="#beef">Beef</a></div>
+			<hr>
+			<div class="col"><a href="#sushi">Sushi</a></div>
+			<hr>
+		</div>
+		
 		<div class="container">
-			<h1 id="top">Our Menu</h1>
+			<div class="col align-self-center">
+				<h1 id="top">Our Menu</h1>
+			</div>
 			
 			<div class="row">
-				<div class="col-lg">
-					<h3>Chicken</h3>
+				<div id="chicken" class="col-lg">
+					<div class="col align-self-center">
+						<h3>Chicken</h3>
+					</div>
 					
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia placerat tellus et aliquam. Fusce pharetra malesuada ante. 
 					Nam egestas tortor et nunc iaculis laoreet. Nulla suscipit tempor risus. Aenean condimentum pretium purus, efficitur dictum ligula vestibulum et. 
@@ -66,10 +75,14 @@
 					justo bibendum in. In hac habitasse platea dictumst. Nam a luctus tortor. Vivamus eu lacus eu felis elementum imperdiet. Maecenas eu nisl at leo tincidunt 
 					tempus. Pellentesque egestas consequat orci euismod suscipit. Sed convallis massa sit amet sagittis sollicitudin. Quisque sed tincidunt dolor. Nulla sit amet 
 					justo ultricies, laoreet nunc sed, interdum massa. Vestibulum id tellus et tortor fringilla pulvinar.</p>
+					
+					<a href="#menu">Back to Top</a>
 				</div>
 				
-				<div class="col-lg">
-					<h3>Beef</h3>
+				<div id="beef" class="col-lg">
+					<div class="col align-self-center">
+						<h3>Beef</h3>
+					</div>
 					
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia placerat tellus et aliquam. Fusce pharetra malesuada ante. 
 					Nam egestas tortor et nunc iaculis laoreet. Nulla suscipit tempor risus. Aenean condimentum pretium purus, efficitur dictum ligula vestibulum et. 
@@ -112,10 +125,14 @@
 					justo bibendum in. In hac habitasse platea dictumst. Nam a luctus tortor. Vivamus eu lacus eu felis elementum imperdiet. Maecenas eu nisl at leo tincidunt 
 					tempus. Pellentesque egestas consequat orci euismod suscipit. Sed convallis massa sit amet sagittis sollicitudin. Quisque sed tincidunt dolor. Nulla sit amet 
 					justo ultricies, laoreet nunc sed, interdum massa. Vestibulum id tellus et tortor fringilla pulvinar.</p>
+					
+					<a href="#menu">Back to Top</a>
 				</div>
 				
-				<div class="col-md-12">
-					<h3>Sushi</h3>
+				<div id="sushi" class="col-md-12">
+					<div class="col align-self-center">
+						<h3>Sushi</h3>
+					</div>
 					
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia placerat tellus et aliquam. Fusce pharetra malesuada ante. 
 					Nam egestas tortor et nunc iaculis laoreet. Nulla suscipit tempor risus. Aenean condimentum pretium purus, efficitur dictum ligula vestibulum et. 
@@ -158,6 +175,8 @@
 					justo bibendum in. In hac habitasse platea dictumst. Nam a luctus tortor. Vivamus eu lacus eu felis elementum imperdiet. Maecenas eu nisl at leo tincidunt 
 					tempus. Pellentesque egestas consequat orci euismod suscipit. Sed convallis massa sit amet sagittis sollicitudin. Quisque sed tincidunt dolor. Nulla sit amet 
 					justo ultricies, laoreet nunc sed, interdum massa. Vestibulum id tellus et tortor fringilla pulvinar.</p>
+					
+					<a href="#menu">Back to Top</a>
 				</div>
 			</div>
 		</div>
