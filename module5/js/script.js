@@ -22,6 +22,7 @@ var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
 var menuItemHtml = "snippets/menu-item.html";
+var aboutHtmlUrl = "snippets/about.html";
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
@@ -155,6 +156,34 @@ dc.loadMenuItems = function (categoryShort) {
     menuItemsUrl + categoryShort,
     buildAndShowMenuItemsHTML);
 };
+
+dc.randomRating = function randomRating(){
+	
+	
+	var aboutHtmlMarkup = $ajaxUtils.sendGetRequest(aboutHtmlUrl, function(html){
+		var ratingArray = {"fa fa-star-o", "fa fa-star"};
+		
+		var randomInt = getRandomInt(1, 5);
+		
+		for(var i=randomInt; i>0; i--){
+			if(i == randomInt){
+				html = insertProperty(html, "starFont", '"'+ratingArray[0]+'"');
+			}else{
+				html = insertProperty(html, "starFont", '"'+ratingArray[1]+'"');
+			}
+		}
+		
+		insertHtml("#main-content", html);
+	}, false); 
+	
+}
+
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
 
 
 // Builds HTML for the categories page based on the data
