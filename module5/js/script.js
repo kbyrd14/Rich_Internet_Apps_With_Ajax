@@ -161,7 +161,7 @@ dc.randomRating = function randomRating(){
 	
 	
 	var aboutHtmlMarkup = $ajaxUtils.sendGetRequest(aboutHtmlUrl, function(html){
-		var ratingArray = {"fa fa-star-o", "fa fa-star"};
+		var ratingArray = ["fa fa-star-o", "fa fa-star"];
 		
 		var randomInt = getRandomInt(1, 5);
 		
