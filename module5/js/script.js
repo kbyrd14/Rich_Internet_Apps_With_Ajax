@@ -166,7 +166,9 @@ dc.randomRating = function randomRating(){
 		var randomInt = getRandomInt(1, 5);
 		
 		if(randomInt < 5){
-			html = insertProperty(html, "starFont"+randomInt+1, ratingArray[0]);
+			for(var i=randomInt+1; i<=5; i++){
+				html = insertProperty(html, "starFont"+randomInt+1, ratingArray[0]);
+			}
 		}
 		
 		for(var i=randomInt; i>0; i--){
