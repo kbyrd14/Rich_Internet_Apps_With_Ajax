@@ -165,13 +165,15 @@ dc.randomRating = function randomRating(){
 		
 		var randomInt = getRandomInt(1, 5);
 		
-		for(var i=randomInt; i>0; i--){
-			if(i == randomInt){
-				html = insertProperty(html, "starFont"+i, ratingArray[0]);
-			}else{
-				html = insertProperty(html, "starFont"+i, ratingArray[1]);
-			}
+		if(randomInt < 5){
+			html = insertProperty(html, "starFont"+randomInt+1, ratingArray[0]);
 		}
+		
+		for(var i=randomInt; i>0; i--){
+			html = insertProperty(html, "starFont"+i, ratingArray[1]);
+		}
+		
+		html = insertProperty(html, "starText", randomInt+"-star rating");
 		
 		insertHtml("#main-content", html);
 	}, false); 
