@@ -167,9 +167,9 @@ dc.randomRating = function randomRating(){
 		
 		for(var i=randomInt; i>0; i--){
 			if(i == randomInt){
-				html = insertProperty(html, "starFont", '"'+ratingArray[0]+'"');
+				html = insertProperty(html, "starFont"+randomInt, ratingArray[0]);
 			}else{
-				html = insertProperty(html, "starFont", '"'+ratingArray[1]+'"');
+				html = insertProperty(html, "starFont"+randomInt, ratingArray[1]);
 			}
 		}
 		
