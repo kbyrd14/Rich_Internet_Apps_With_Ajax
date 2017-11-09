@@ -19,11 +19,14 @@
 		filter.searchTerm = "";
 		
 		filter.search = function(){
-			filter.found = menuSearchService.getMatchedMenuItems(filter.searchTerm);
+			var promise = menuSearchService.getMatchedMenuItems(filter.searchTerm);
+			promise.then(function(results){
+				filter.found = results;
+			});
 		};
 		
 		filter.removeItem = function (itemIndex) {
-		    menuSearchService.removeItem(itemIndex);
+		    menuSearchService.removeItem(itemIndex, filter.found);
 		  };
 	};
 	
@@ -32,8 +35,8 @@
 	function menuSearchService($http) {
 		var service = this;
 		
-		service.removeItem = function (itemIndex) {
-		    items.splice(itemIndex, 1);
+		service.removeItem = function (itemIndex, results) {
+		    results.splice(itemIndex, 1);
 		  };
 		
 		service.getMatchedMenuItems = function(searchTerm){
@@ -60,7 +63,8 @@
 			templateUrl: 'foundItems.html',
 			scope: {
 				items: '<',
-				onRemove: '&'
+				onRemove: '&',
+				searchVal: '<'
 			},
 			controller: narrowItDownDirectiveController,
 			controllerAs: 'results',
@@ -71,17 +75,19 @@
 	}
 	
 	function narrowItDownDirectiveController() {
-	  var results = this;
-
+		var results = this;
 	  
-//	    for (var i = 0; i < results.found.length; i++) {
-//	      var name = filter.found.items[i].name;
-//	      if (name.toLowerCase().indexOf("cookie") !== -1) {
-//	        return true;
-//	      }
-//	    }
-
-	    
+		results.empty = function(searchTerm){
+			if(searchTerm === ""){
+				return true;
+			}
+			
+			if(results.items.length === 0){
+				  return true;
+			  }
+			  
+			  return false;
+		}
 	  };
 	
 })();
