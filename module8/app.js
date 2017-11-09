@@ -6,7 +6,7 @@
 	angular.module('NarrowItDownApp', [])
 	.controller('narrowItDownController', narrowItDownController)
 	.service('menuSearchService', menuSearchService)
-	.directive('foundItemsDirective', foundItemsDirective);
+	.directive('foundItems', foundItemsDirective);
 	
 	
 	// used to mitigate minification errors
@@ -74,12 +74,12 @@
 	  var results = this;
 
 	  
-	    for (var i = 0; i < filter.found.length; i++) {
+//	    for (var i = 0; i < results.found.length; i++) {
 //	      var name = filter.found.items[i].name;
 //	      if (name.toLowerCase().indexOf("cookie") !== -1) {
 //	        return true;
 //	      }
-	    }
+//	    }
 
 	    
 	  };
