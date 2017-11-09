@@ -4,35 +4,37 @@
 (function(){
 	'use strict';
 	angular.module('NarrowItDownApp', [])
-	.controller('NarrowItDownController', narrowItDownController)
-	.filter('custom', CustomFilterFactory)
-	.service('MenuSearchService', MenuSearchService);
+	.controller('narrowItDownController', narrowItDownController)
+	.service('menuSearchService', menuSearchService)
+	.directive('foundItemsDirective', foundItemsDirective);
+	
 	
 	// used to mitigate minification errors
-	narrowItDownController.inject = ['MenuSearchService'];
-	function narrowItDownController(MenuSearchService){
+	narrowItDownController.inject = ['menuSearchService'];
+	function narrowItDownController(menuSearchService){
 		var filter = this;
 		
-//		var srvc = MenuSearchService.service;
+//		var srvc = menuSearchService.service;
 		
 		filter.searchTerm = "";
 		
 		filter.search = function(){
-			filter.found = MenuSearchService.getMatchedMenuItems(filter.searchTerm);
+			filter.found = menuSearchService.getMatchedMenuItems(filter.searchTerm);
 		};
+		
+		filter.removeItem = function (itemIndex) {
+		    menuSearchService.removeItem(itemIndex);
+		  };
 	};
 	
-	function CustomFilterFactory(){
-		return function(data){
-			data = data || "";
-						
-			return "$$$"+(data.amount*data.cost);
-		}
-	}
 	
-	MenuSearchService.$inject = ['$http'];
-	function MenuSearchService($http) {
+	menuSearchService.$inject = ['$http'];
+	function menuSearchService($http) {
 		var service = this;
+		
+		service.removeItem = function (itemIndex) {
+		    items.splice(itemIndex, 1);
+		  };
 		
 		service.getMatchedMenuItems = function(searchTerm){
 			return $http({url:"https://davids-restaurant.herokuapp.com/menu_items.json"}).then(function (result) {
@@ -49,6 +51,37 @@
 			    return foundItems;
 			});
 		};
-
 	}
+	
+//	foundItemsDirective.$inject = [narrowItDownController];
+	function foundItemsDirective(){
+		var ddo = {
+//			restrict: 'E',
+			templateUrl: 'foundItems.html',
+			scope: {
+				items: '<',
+				onRemove: '&'
+			},
+			controller: narrowItDownDirectiveController,
+			controllerAs: 'results',
+			bindToController: true	
+		};
+		
+		return ddo;
+	}
+	
+	function narrowItDownDirectiveController() {
+	  var results = this;
+
+	  
+	    for (var i = 0; i < filter.found.length; i++) {
+//	      var name = filter.found.items[i].name;
+//	      if (name.toLowerCase().indexOf("cookie") !== -1) {
+//	        return true;
+//	      }
+	    }
+
+	    
+	  };
+	
 })();
