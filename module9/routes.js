@@ -25,4 +25,4 @@
 	    templateUrl: 'items.html'
 	      });
 	  }
-} );
+})();

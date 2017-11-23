@@ -1,29 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app='MenuApp'>
   <head>
     <title>Module 9</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="angular-ui-router.min.js"></script>
+    <script src="data.module.js"></script>
+    <script src="menuapp.module.js"></script>
+    <script src="routes.js"></script>
   </head>
 <body>
 
-
-<div class="container" ng-controller="">
+<div class="container">
 	<div class="row">
 
 		<ui-view></ui-view>
-		
-		<script type="text/javascript" src="angular.min.js"></script>
-    	<script type="text/javascript" src="angular-ui-router.min.js"></script>
-		
-		<!-- Modules -->
-    	<script src="menuapp.module.js"></script>
-    	<script src="data.module.js"></script>
     	
-    	<script src="routes.js"></script>
-    	
-    	<script src="menudata.service.js"></script>
 	</div>
 </div>
 
