@@ -1,0 +1,23 @@
+<div class="container">
+  
+	<form action="" name="signUpForm" novalidate>
+		<input type="text" name="firstName" placeholder="First Name" ng-model="signUpCtrl.firstName" required/>
+		<span ng-if"signUpForm.firstName.$error.required && signUpForm.firstName.$touched">This field is required</span>
+		
+		<input type="text" name="lastName" placeholder="Last Name" ng-model="signUpCtrl.lastName" required/>
+		<span ng-if"signUpForm.lastName.$error.required && signUpForm.lastName.$touched">This field is required</span>
+		
+		<input type="email" name="email" placeholder="your@email.xyz" ng-model="signUpCtrl.email" required pattern="[^ @]*@[^ @]*"/>
+		<span ng-if"signUpForm.email.$error.required && signUpForm.email.$touched">This field is required</span>
+		<span ng-if"signUpForm.email.$error.pattern && signUpForm.email.$touched">Invalid email</span>
+		
+		<input type="tel" name="phone" placeholder="Phone Number" ng-model="signUpCtrl.phone" required/>
+		<span ng-if"signUpForm.phone.$error.required && signUpForm.phone.$touched">This field is required</span>
+		
+		<input type="number" name="favDish" placeholder="54" required ng-model="signUpCtrl.favItem"/>
+		<span ng-if"signUpForm.favDish.$error.required && signUpForm.favDish.$touched">This field is required</span>
+		
+		<button ng-click="signUpCtrl.submit()" ng-disabled="signUpForm.$invalid">Submit</button>
+	</form>
+
+</div>
