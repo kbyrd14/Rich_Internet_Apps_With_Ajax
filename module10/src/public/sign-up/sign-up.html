@@ -16,11 +16,11 @@
 		
 		<input class="form-style" type="text" name="favDish" placeholder="A4" required ng-model="signUpCtrl.favItem"/>
 		<span ng-if"signUpForm.favDish.$error.required && signUpForm.favDish.$touched">This field is required</span>
-		<span>{{favError}}</span>
+		<span>{{signUpCtrl.favError}}</span>
 		
 		<button class="form-style" ng-click="signUpCtrl.submit()" ng-disabled="signUpForm.$invalid">Submit</button>
 		
-		<span>{{savedMsg}}</span>
+		<span>{{signUpCtrl.savedMsg}}</span>
 	</form>
 
 </div>
