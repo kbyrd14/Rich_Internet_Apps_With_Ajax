@@ -29,13 +29,12 @@
 		
 		<div class="form-group">
 			<label class="col-md-3" for="favDish">Favorite Item</label>
-			<input type="hidden" ng-model="signUpCtrl.favExists" />
 			<input class="form-style {{signUpCtrl.valid}}" type="text" name="favDish" placeholder="A4" required ng-model="signUpCtrl.favItem" ng-change="signUpCtrl.findFav()"/>
 			<span ng-if="signUpForm.favDish.$error.required && signUpForm.favDish.$touched">This field is required</span>
 			<span>{{signUpCtrl.favError}}</span>
 		</div>
 		
-		<button class="form-style" ng-click="signUpCtrl.submit()" ng-disabled="(signUpForm.$invalid && signUpCtrl.favExists)">Submit</button>
+		<button class="form-style" ng-click="signUpCtrl.submit()" ng-disabled="signUpForm.$invalid">Submit</button>
 		
 		<span>{{signUpCtrl.savedMsg}}</span>
 	</form>

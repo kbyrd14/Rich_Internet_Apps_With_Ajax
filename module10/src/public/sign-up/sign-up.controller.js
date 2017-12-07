@@ -38,6 +38,7 @@ function SignUpController(SignUpService) {
   function errorHandler(response){
 	  signUpCtrl.valid = "ng-invalid";
 	  signUpCtrl.favError = "No such number exists";
+	  signUpCtrl.favItem = "";
   }
   
   signUpCtrl.findFav = function(){
