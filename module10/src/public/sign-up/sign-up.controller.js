@@ -14,6 +14,8 @@ function SignUpController(SignUpService) {
   signUpCtrl.favItem = "";
   signUpCtrl.favError = "";
   signUpCtrl.savedMsg = "";
+  signUpCtrl.favExists = false;
+  signUpCtrl.valid = "ng-valid";
   
   var responsePromise;
   
@@ -33,6 +35,11 @@ function SignUpController(SignUpService) {
 	  signUpCtrl.savedMsg = "Your information has been saved";
   }
   
+  function errorHandler(response){
+	  signUpCtrl.valid = "ng-invalid";
+	  signUpCtrl.favError = "No such number exists";
+  }
+  
   signUpCtrl.findFav = function(){
 	  if(signUpCtrl.favItem && signUpCtrl.favItem.length === 2){
 		  responsePromise = SignUpService.findFavItemPromise(signUpCtrl.favItem.toUpperCase());
@@ -41,9 +48,7 @@ function SignUpController(SignUpService) {
 			  signUpCtrl.favError = "";
 			  SignUpService.savedFav = response.data;
 			  
-		  }, function error(response){
-			  signUpCtrl.favError = "No such number exists";
-		  });
+		  }, errorHandler);
 	  }
   }
   
@@ -59,9 +64,7 @@ function SignUpController(SignUpService) {
 			  SignUpService.savedFav = response.data;
 			  signUpCtrl.favItem = "";
 			  
-		  }, function error(response){
-			  signUpCtrl.favError = "No such number exists";
-		  }); 
+		  }, errorHandler); 
 	  }else{
 		  register();
 	  }

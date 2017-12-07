@@ -1,10 +1,10 @@
 <div class="container">
  
- <ul>
+ <ul ng-if="infoCtrl.name != '' ">
  	<li>{{infoCtrl.name}}</li>
  	<li>{{infoCtrl.email}}</li>
  	<li>{{infoCtrl.phone}}</li>
- 	<li>
+ 	<li> Favorite Item
  		<ul>
 	 		<li>{{infoCtrl.favTitle}}</li>
 	 		<li>{{infoCtrl.favDescription}}</li>
@@ -12,5 +12,7 @@
  		</ul>
  	</li>
  </ul>
+ 
+ <h3 ng-if="infoCtrl.name === '' ">Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now!</a></h3>
  
 </div>
