@@ -5,7 +5,7 @@ angular.module('public')
 .controller('SignUpController', SignUpController);
 
 SignUpController.$inject = ['SignUpService'];
-function SignUpController(SignUpService) {
+function SignUpController(SignUpService, $scope) {
   var signUpCtrl = this;
   signUpCtrl.firstName = "";
   signUpCtrl.lastName = "";
@@ -33,12 +33,15 @@ function SignUpController(SignUpService) {
 	  signUpCtrl.phone = "";
 	  
 	  signUpCtrl.savedMsg = "Your information has been saved";
+	  
+//	  $scope.signUpForm.$setUntouched();
   }
   
   function errorHandler(response){
 	  signUpCtrl.valid = "ng-invalid";
 	  signUpCtrl.favError = "No such number exists";
-	  signUpCtrl.favItem = "";
+//	  $scope.signUpForm.$setInvalid();
+	  //signUpCtrl.favItem = "";
   }
   
   signUpCtrl.findFav = function(){
